@@ -1,0 +1,9 @@
+<section class="navigation">
+  <nav>
+    <ul>
+      <li *ngFor="let link of navigation">
+        <a [routerLink]="link.path">{{link.name}}</a>
+      </li>
+    </ul>
+  </nav>
+</section>
