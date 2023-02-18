@@ -1,10 +1,13 @@
 name: Releases
 on:
-  push:
+  pull_request:
     branches:
       - main
+    types:
+      - closed
 jobs:
   changelog:
+    if: "!contains(github.event.pull_request.user.login, 'bot')"
     permissions: write-all
     runs-on: ubuntu-latest
 
