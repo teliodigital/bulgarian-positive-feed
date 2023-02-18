@@ -1,1 +1,21 @@
-<a>front-page works!</a>
+<section class="front">
+  <div>
+    <span>Discover the Positive Vibes</span>
+    <h1>Join our community and discover the beauty, culture, and positive spirit of Bulgaria</h1>
+    <p>
+      Bulgaria is a country with a rich cultural heritage, stunning natural beauty, and warm and welcoming people. At
+      our positive social network, we're all about celebrating the many positive aspects of Bulgarian culture and
+      connecting with others who share our love for this amazing country.
+    </p>
+    <form [formGroup]="newsletterFormGroup">
+      <input type="email" formControlName="email" placeholder="Enter your email address">
+      <button (click)="registerEmail()">Join Now</button>
+    </form>
+    <div>
+      <h3>Will be available on mobile too</h3>
+    </div>
+  </div>
+  <div>
+
+  </div>
+</section>

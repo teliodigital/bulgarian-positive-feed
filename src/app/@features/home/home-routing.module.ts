@@ -4,6 +4,8 @@ import {HomeComponent} from "./home.component";
 import {FrontPageComponent} from "./front-page/front-page.component";
 import {AboutPageComponent} from "./about-page/about-page.component";
 import {ContactPageComponent} from "./contact-page/contact-page.component";
+import {LoginPageComponent} from "@features/home/login-page/login-page.component";
+import {RegisterPageComponent} from "@features/home/register-page/register-page.component";
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
       {
         path: 'contact',
         component: ContactPageComponent
+      },
+      {
+        path: 'login',
+        component: LoginPageComponent
+      },
+      {
+        path: 'register',
+        component: RegisterPageComponent
       }
     ]
   }

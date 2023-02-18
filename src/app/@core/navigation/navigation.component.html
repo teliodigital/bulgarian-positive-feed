@@ -2,8 +2,26 @@
   <nav>
     <ul>
       <li *ngFor="let link of navigation">
-        <a [routerLink]="link.path">{{link.name}}</a>
+        <a routerLinkActive="navigation__active" [routerLink]="link.path">{{link.name}}</a>
       </li>
+      |
+      <ng-container *ngIf="isLoggedIn | async; else notLogged">
+        <li>
+          <a routerLinkActive="navigation__active" [routerLink]="['/profile']">Profile</a>
+        </li>
+        <li>
+          <a routerLinkActive="navigation__active" [routerLink]="['/logout']">Logout</a>
+        </li>
+      </ng-container>
     </ul>
   </nav>
 </section>
+
+<ng-template #notLogged>
+  <li>
+    <a routerLinkActive="navigation__active" [routerLink]="['/login']">Login</a>
+  </li>
+  <li>
+    <a routerLinkActive="navigation__active" [routerLink]="['/register']">Register</a>
+  </li>
+</ng-template>

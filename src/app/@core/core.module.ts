@@ -1,13 +1,17 @@
 import {NgModule, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {SharedModule} from "../@shared/shared.module";
-import { LayoutComponent } from './layout/layout.component';
-import {RouterLinkWithHref, RouterOutlet} from "@angular/router";
-import { NavigationComponent } from './navigation/navigation.component';
+import {SharedModule} from "@shared/shared.module";
+import {LayoutComponent} from './layout/layout.component';
+import {RouterLinkActive, RouterLinkWithHref, RouterOutlet} from "@angular/router";
+import {NavigationComponent} from './navigation/navigation.component';
+import {AuthService} from "@core/services";
 
 const Modules = [
   CommonModule,
-  SharedModule
+  SharedModule,
+  RouterOutlet,
+  RouterLinkWithHref,
+  RouterLinkActive
 ];
 
 @NgModule({
@@ -15,11 +19,9 @@ const Modules = [
     LayoutComponent,
     NavigationComponent
   ],
-  imports: [
-    ...Modules,
-    RouterOutlet,
-    RouterLinkWithHref
-  ]
+    imports: [
+        ...Modules
+    ]
 })
 export class coreModule {
   constructor(@Optional() @SkipSelf() parentModule: coreModule) {
@@ -32,7 +34,9 @@ export class coreModule {
   static forRoot() {
     return {
       ngModule: coreModule,
-      providers: []
+      providers: [
+        AuthService
+      ]
     };
   }
 }
