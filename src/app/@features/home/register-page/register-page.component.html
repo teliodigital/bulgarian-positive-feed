@@ -1,0 +1,8 @@
+<form [formGroup]="registerForm">
+  <input type="text" placeholder="First name" formControlName="firstName">
+  <input type="text" placeholder="Last name" formControlName="lastName">
+  <input type="email" placeholder="Email" formControlName="email">
+  <input type="password" placeholder="Enter password" formControlName="password">
+  <input type="password" placeholder="Repeat password" formControlName="passwordRepeat">
+  <button (click)="submitForm()">Submit</button>
+</form>

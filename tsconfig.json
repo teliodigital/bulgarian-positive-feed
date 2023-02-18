@@ -18,6 +18,35 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "es2020",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "paths": {
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@core/*": [
+        "src/app/@core/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@environments/*": [
+        "src/environments/*"
+      ],
+      "@shared/*": [
+        "src/app/@shared/*"
+      ],
+      "@features/*": [
+        "src/app/@features/*"
+      ],
+      "@constants/*": [
+        "src/app/constant-data/*"
+      ],
+    },
     "lib": [
       "es2020",
       "dom"

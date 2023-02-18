@@ -1,0 +1,77 @@
+@import "src/styles/colors";
+
+.front {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  > div:first-child {
+
+    width: 80%;
+    margin: 80px auto 0 auto;
+
+
+
+    span {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      color: $text-color;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      color: $text-color;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: $text-color;
+    }
+
+    form {
+
+      display: flex;
+
+      input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $text-color;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-right: none;
+        outline: none;
+      }
+
+      button {
+        border: 1px solid $text-color;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-left: none;
+        background-color: $btn-color;
+        color: $btn-color-light;
+        outline: none;
+        cursor: pointer;
+
+        transition: background-color 0.2s ease-in-out;
+
+        min-width: 250px;
+
+        &:hover {
+          background-color: $btn-color-hover;
+        }
+
+        &:active {
+          background-color: $btn-color;
+        }
+      }
+    }
+  }
+
+  > div:last-child {
+    background-color: $bg-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
