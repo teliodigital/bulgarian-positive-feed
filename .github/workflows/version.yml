@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check if bot created the branch
+        if: github.actor == 'github-actions[bot]' && github.ref == 'refs/heads/main'
+        run: exit 0
+        
       - name: create branch
         uses: peterjgrainger/action-create-branch@v2.3.0
         id: create-branch
