@@ -1,0 +1,37 @@
+name: Version and Tag
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  version-and-tag:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2.4.0
+        with:
+          node-version: '14.x'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Determine new version
+        run: |
+          VERSION=`npm version patch --no-git-tag-version`
+          echo "::set-env name=NEW_VERSION::$VERSION"
+
+      - name: Tag new version
+        if: ${{ env.NEW_VERSION }}
+        run: git tag $NEW_VERSION && git push origin $NEW_VERSION
+
+      - name: Update version in package.json
+        if: ${{ env.NEW_VERSION }}
+        run: |
+          sed -i "s/\"version\": \".*\"/\"version\": \"$NEW_VERSION\"/" package.json
+          git commit -am "Bump version to $NEW_VERSION" && git push origin main
