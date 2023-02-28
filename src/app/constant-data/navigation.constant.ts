@@ -1,14 +1,14 @@
 export const NavigationConstant = [
   {
-    name: 'Home',
+    name: 'Начало',
     path: '/home'
   },
   {
-    name: 'About',
+    name: 'За нас',
     path: '/about'
   },
   {
-    name: 'Contact',
+    name: 'Контакти',
     path: '/contact'
   }
 ]
