@@ -1,1 +1,11 @@
 @import '~normalize.css';
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('./assets/fonts/otf/Bitter-Regular.otf') format('opentype');
+}
+
+* {
+  font-family: 'Bitter', sans-serif;
+  -webkit-locale: "bg_BG";
+}
