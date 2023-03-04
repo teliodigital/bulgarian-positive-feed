@@ -28,9 +28,16 @@
 
 ## 💬 Commit Message Guidelines
 
-- Use semantic tags for your commit messages in order to keep versioning up to date. Use the tag with ":" after the specific label
-- Use imperative mood in the subject line of your commit message, e.g. **"fix: fix issue with broken link"**
-- Avoid adding unnecessary details to the subject line, and use the body of the commit message to provide additional context if necessary
+We use **Commitizen** to ensure consistent and meaningful commit messages.
+Please run 
+```
+npm run commit
+```
+instead of
+```
+git commit
+```
+to create a commit that follows our guidelines.
 
 **Here are some guidelines for writing commit messages using the semantic-release convention:**
 
@@ -43,6 +50,10 @@
 - **perf**: Use this when you make changes that improve the performance of the code, such as optimizing a piece of code or reducing the memory usage.
 - **refactor**: Use this when you make changes to the code that do not add new features or fix bugs, but improve the code structure or readability.
 - **test**: Use this when you add new tests to the codebase or modify existing tests.
+
+When prompted by Commitizen, please select the appropriate type for your commit message and provide a brief and descriptive summary of your changes. You can also include a longer description of your changes in the commit message body, if necessary.
+
+If anything in these guidelines is unclear or if you have feedback, please don't hesitate to let us know! We're always looking to improve our practices and make the project better for everyone. 🤝
 
 ## 🚪 Pull Request Workflow
 
