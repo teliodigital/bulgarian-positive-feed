@@ -8,13 +8,14 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "commit": "cz",
     "postinstall": "husky install"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.0.0",
-    "@angular/common": "^14.0.0",
     "@angular/cdk": "^14.2.7",
+    "@angular/common": "^14.0.0",
     "@angular/compiler": "^14.0.0",
     "@angular/core": "^14.0.0",
     "@angular/forms": "^14.0.0",
@@ -34,6 +35,8 @@
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.0.7",
     "@types/jasmine": "~4.0.0",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.3",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
@@ -43,5 +46,10 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "semantic-release": "^20.1.0",
     "typescript": "~4.7.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
