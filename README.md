@@ -14,7 +14,7 @@ Install the required dependencies with
 npm install
 ```
 
-Run the project using
+Run the project using:
 
 ```
 ng serve
