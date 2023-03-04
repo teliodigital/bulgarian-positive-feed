@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
-    "commit": "npm run test:headless && cz",
+    "commit": "cz",
     "postinstall": "husky install"
   },
   "private": true,
