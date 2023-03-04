@@ -26,6 +26,14 @@ jobs:
       # fetch branches and switch to the temporary branch
       - name: switch to new branch
         run: git fetch --all && git checkout --track origin/release-from-${{ github.sha }}
+        
+      - name: Bump version and create tag
+        run: |
+          # Bump version and create tag
+          VERSION=$(npm version patch --no-git-tag-version)
+          echo "New version: $VERSION"
+          git tag $VERSION
+          git push origin $VERSION
 
       # create release info and push it upstream
       - name: conventional Changelog Action
@@ -37,6 +45,7 @@ jobs:
           git-branch: "release-from-${{ github.sha }}"
           skip-on-empty: false
           skip-git-pull: true
+          skip-tag: false
 
       # create PR using GitHub CLI
       - name: create PR with release info
